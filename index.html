@@ -17,69 +17,61 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <div class="search-bar">
-        <input type="text" placeholder="Rechercher un produit..." />
-    </div>
 </header>
 
-<!-- Section Hero avec image en arrière-plan -->
 <section class="hero scroll-animate" id="hero">
     <h1>Votre bien-être, notre priorité</h1>
+    <p>Nous vous offrons des produits de santé de qualité pour votre bien-être au quotidien.</p>
     <a href="contact.html"><button>Acheter maintenant</button></a>
 </section>
 
-<!-- Section Catégories -->
 <section class="categories scroll-animate">
     <h2>Catégories</h2>
     <div class="category-list">
         <div class="category">
-           <a href='https://postimg.cc/CzZ2ZFpx' target='_blank'><img src='https://i.postimg.cc/CzZ2ZFpx/Savon-grand.jpg' border='0' alt='Savon-grand'/></a>
+           <a href= '#'><img src="https://i.postimg.cc/MGq3rfVf/Savon-grand.png" border='0' alt='Savon-grand'/></a>
             <p>Savon</p>
         </div>
         <div class="category">
-           <a href='https://postimg.cc/cKGPyPj4' target='_blank'><img src='https://i.postimg.cc/cKGPyPj4/Pomade-grand.jpg' border='0' alt='Pomade-grand'/></a>
+           <a href="articles.html" target='_blank'><img src="https://i.postimg.cc/Z5kMpMqc/Pommade-grande.png" border='0' alt='Pomade-grand'/></a>
             <p>Pomade</p>
         </div>
         <div class="category">
-        <a href='https://postimg.cc/K4pVv1VW' target='_blank'><img src='https://i.postimg.cc/K4pVv1VW/Poudre-m-dicale.jpg' border='0' alt='Poudre-m-dicale'/></a>
+        <a href="articles.html"target='_blank'><img src="https://i.postimg.cc/jjc3Vq4g/Poudre-m-dicale.png" border='0' alt='Poudre-m-dicale'/></a>
             <p>Poudre médicale</p>
         </div>
     </div>
 </section>
 
-<!-- Section Achat -->
 <section class="products scroll-animate">
     <h2>Acheter maintenant</h2>
     <div class="product-list">
         <div class="product">
-           <a href='https://postimg.cc/WhQHgQs6' target='_blank'><img src='https://i.postimg.cc/WhQHgQs6/Savon-en-sachet.jpg' border='0' alt='Savon-en-sachet'/></a>
-            <p>Savon</p>
-            <button>Ajouter au panier</button>
+           <a href="articles.html" target='_blank'><img src='https://i.postimg.cc/WhQHgQs6/Savon-en-sachet.jpg' border='0' alt='Savon-en-sachet'/></a>
+            <p data-name="Savon en sachet" data-price="10">Savon 10 €</p>
+            <button class="add-to-cart">Ajouter au panier</button>
         </div>
         <div class="product">
-           <a href='https://postimg.cc/K4pVv1VW' target='_blank'><img src='https://i.postimg.cc/K4pVv1VW/Poudre-m-dicale.jpg' border='0' alt='Poudre-m-dicale'/></a>
-            <p>Poudre médicale</p>
-            <button>Ajouter au panier</button>
+           <a href="articles.html" target='_blank'><img src="https://i.postimg.cc/jjc3Vq4g/Poudre-m-dicale.png" border='0' alt='Poudre-m-dicale'/></a>
+            <p data-name="Poudre médicale" data-price="15">Poudre médicale 15 €</p>
+            <button class="add-to-cart">Ajouter au panier</button>
         </div>
         <div class="product">
-           <a href='https://postimg.cc/gXY5r8mC' target='_blank'><img src='https://i.postimg.cc/gXY5r8mC/Pomade-peuti.jpg' border='0' alt='Pomade-peuti'/></a>
-            <p>Pomade</p>
-            <button>Ajouter au panier</button>
+           <a href="articles.html" target='_blank'><img src="https://i.postimg.cc/13pYHrnZ/Pommade-petite.png" border='0' alt='Pomade-peuti'/></a>
+            <p data-name="Pomade" data-price="5">Pomade 5 €</p>
+            <button class="add-to-cart">Ajouter au panier</button>
         </div>
     </div>
 </section>
 
-<!-- Bandeau Offre -->
 <div class="offer scroll-animate">
     Offre spéciale : Jusqu’à -30% sur les produits sélectionnés !
 </div>
 
-<!-- Témoignage -->
 <section class="testimonial scroll-animate">
     <p>“Excellent service et produits de grande qualité. Très satisfaite de mon achat !”</p>
 </section>
 
-<!-- Section FAQ -->
 <section class="faq scroll-animate">
     <h2>Questions fréquentes</h2>
     <div class="faq-item">
@@ -98,6 +90,27 @@
 
 <button id="scrollTopBtn">↑</button>
 
+<button class="cart-button" id="cart-button">
+    🛒 <span id="cart-count">0</span>
+</button>
+
+<div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Votre Panier</h2>
+        <ul id="cart-items"></ul>
+        <div id="cart-modal-footer">
+            <div id="cart-total"></div>
+            <button id="checkout-button">Procéder à l'achat</button>
+        </div>
+    </div>
+</div>
+
+<div id="cart-notification" class="cart-notification">
+    <img id="notification-img" src="" alt="Produit ajouté">
+    <span id="notification-message" class="message"></span>
+</div>
+
 <footer>
     <p>
         &copy; 2025 MedShop |
@@ -107,7 +120,6 @@
     </p>
 </footer>
 
-<!-- Scripts -->
 <script>
     // Bouton scroll top
     const scrollBtn = document.getElementById('scrollTopBtn');
@@ -125,7 +137,6 @@
         question.addEventListener('click', () => {
             const parent = question.parentElement;
 
-            // Fermer les autres FAQ ouvertes
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== parent) {
                     item.classList.remove('active');
@@ -133,7 +144,6 @@
                 }
             });
 
-            // Toggle l'actuel
             parent.classList.toggle('active');
 
             const answer = parent.querySelector('p');
@@ -162,6 +172,131 @@
 
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('load', checkScroll);
+</script>
+
+<script>
+    // Logique du panier d'achat et de la commande
+    let cart = [];
+    const whatsappNumber = '22870445866';
+
+    const cartCountElement = document.getElementById('cart-count');
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal');
+    const closeButton = document.querySelector('.close-button');
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    const checkoutButton = document.getElementById('checkout-button');
+    const notification = document.getElementById('cart-notification');
+    const notificationImg = document.getElementById('notification-img');
+    const notificationMessage = document.getElementById('notification-message');
+
+    function updateCartDisplay() {
+        cartCountElement.textContent = cart.length;
+        cartItemsList.innerHTML = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.classList.add('cart-item');
+            
+            li.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                </div>
+                <span class="cart-item-price">${item.price} €</span>
+                <button class="remove-item" data-index="${index}">&times;</button>
+            `;
+            cartItemsList.appendChild(li);
+            total += item.price;
+        });
+        cartTotalElement.textContent = `Total: ${total} €`;
+    }
+
+    function showNotification(productName, productImage) {
+        notificationImg.src = productImage;
+        notificationMessage.textContent = `Le produit "${productName}" a été ajouté au panier !`;
+        notification.classList.add('visible');
+        setTimeout(() => {
+            notification.classList.remove('visible');
+        }, 3000);
+    }
+
+    function addToCart(event) {
+        const productElement = event.target.closest('.product');
+        const productName = productElement.querySelector('p').getAttribute('data-name');
+        const productPrice = parseFloat(productElement.querySelector('p').getAttribute('data-price'));
+        const productImage = productElement.querySelector('img').src;
+
+        const product = {
+            name: productName,
+            price: productPrice,
+            image: productImage
+        };
+
+        cart.push(product);
+        updateCartDisplay();
+        showNotification(productName, productImage);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+    }
+
+    function checkout() {
+        if (cart.length === 0) {
+            alert("Votre panier est vide. Ajoutez des produits avant de passer commande.");
+            return;
+        }
+
+        let orderMessage = "Salut ! 👋 J'aimerais passer la commande suivante :\n\n";
+        let total = 0;
+
+        cart.forEach(item => {
+            orderMessage += `🛒 ${item.name} - ${item.price} €\n`;
+            total += item.price;
+        });
+
+        orderMessage += `\n💰 Total : ${total} €`;
+        orderMessage += `\n\nMerci de me donner les détails de la livraison et du paiement ! 🙏`;
+
+        const encodedMessage = encodeURIComponent(orderMessage);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappURL, '_blank');
+
+        cart = [];
+        updateCartDisplay();
+        cartModal.style.display = 'none';
+    }
+
+    // Ajouter des écouteurs d'événements
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+
+    cartButton.addEventListener('click', () => {
+        cartModal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+
+    checkoutButton.addEventListener('click', checkout);
+
+    cartItemsList.addEventListener('click', (event) => {
+        if (event.target.classList.contains('remove-item')) {
+            const index = event.target.dataset.index;
+            removeFromCart(index);
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
 </script>
 
 </body>
